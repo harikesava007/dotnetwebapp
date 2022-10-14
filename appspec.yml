@@ -1,0 +1,18 @@
+version: 0.0
+os: windows
+files:
+  - source: /
+    destination: C:\Users\Administrator\Desktop\deployment
+hooks:
+  BeforeInstall:
+    - location: install.bat
+      timeout: 300
+      runas: administrator
+  ApplicationStart:
+    - location: start.bat
+      timeout: 300
+      runas: administrator
+  ApplicationStop:
+    - location: stop.bat
+      timeout: 300
+      runas: administrator
